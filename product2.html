@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chuchotemenre-le sourire</title>
+  <style>
+    /* Same styles as product1.html */
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: black;
+      color: white;
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    .logo { text-align: center; font-size: 40px; padding: 30px 0 10px; font-weight: bold; letter-spacing: 2px; }
+    .nav { text-align: center; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.2); }
+    .nav a { color: rgba(255,255,255,0.7); text-decoration: none; margin: 0 20px; font-size: 16px; transition: 0.3s ease; }
+    .nav a:hover { color: white; }
+    .product-page { max-width: 900px; margin: 60px auto; display: flex; flex-wrap: wrap; gap: 30px; padding: 0 20px; }
+    .product-page img { width: 100%; max-width: 400px; border-radius: 12px; }
+    .details { flex: 1; }
+    .details h1 { margin-top: 0; }
+    .details p { font-size: 15px; color: #ccc; }
+    .price { font-size: 22px; margin: 20px 0; }
+    button { background-color: white; color: black; padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer; font-size: 16px; }
+    button:hover { background-color: #ddd; }
+    .toast { position: fixed; bottom: 20px; right: 20px; background-color: #111; color: white; padding: 12px 20px; border-radius: 8px; opacity: 0; transition: opacity 0.5s ease; z-index: 1000; }
+    .toast.show { opacity: 1; }
+  </style>
+</head>
+<body>
+  <div class="logo">Le Sourire</div>
+  <div class="nav">
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="cart.html">Cart</a>
+  </div>
+
+  <div class="product-page">
+    <img src="e145dadd-7c24-48e9-b480-0a5204a190c2.png"Chuchotement">
+    <div class="details">
+      <h1>Chuchotement</h1>
+      <p>Delicate yet unforgettable, Chuchotement is a fragrance that speaks softly—an intimate veil of scent that lingers like a whispered secret against the skin. It opens with a subtle tease of iris and violet leaf, unfolding into a heart of soft suede and heliotrope, before settling into a warm, powdery trail of tonka and sandalwood. It doesn’t shout. It seduces</p>
+      <div class="price">$3500</div>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast">Added to cart</div>
+
+  <script>
+    function addToCart() {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.push({ name: "Chuchotement", price: 3500, image: "e145dadd-7c24-48e9-b480-0a5204a190c2.png"})
+      localStorage.setItem("cart", JSON.stringify(cart));
+      showToast("Chuchotement add to the cart")
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById("toast");
+      toast.textContent = message;
+      toast.classList.add("show");
+      setTimeout(() => {
+        toast.classList.remove("show");
+      }, 3000);
+    }
+  </script>
+</body>
+</html>

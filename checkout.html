@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Le Sourire - Checkout</title>
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      color: white;
+      font-family: 'Helvetica Neue', sans-serif;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 60px auto;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    input, button {
+      display: block;
+      width: 100%;
+      margin-top: 15px;
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
+      font-size: 16px;
+    }
+
+    input {
+      background: #111;
+      color: white;
+    }
+
+    button {
+      background: white;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background: #ddd;
+    }
+
+    .payment-icons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .payment-icons img {
+      height: 30px;
+    }
+
+    .paypal-btn {
+      margin-top: 20px;
+      background: #FFC439;
+      color: black;
+    }
+
+    /* ✅ Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: black;
+      color: white;
+      padding: 15px 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.1);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s ease;
+      z-index: 999;
+    }
+
+    .toast.show {
+      opacity: 1;
+      pointer-events: all;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Checkout</h2>
+
+    <input type="text" placeholder="Card Number" />
+    <input type="text" placeholder="Expiry Date (MM/YY)" />
+    <input type="text" placeholder="CVC" />
+    <input type="text" placeholder="Name on Card" />
+
+    <div class="payment-icons">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png" alt="MasterCard">
+    </div>
+
+    <button onclick="fakePay()">Pay Now</button>
+    <button class="paypal-btn" onclick="fakePay()">Pay with PayPal</button>
+  </div>
+
+  <!-- ✅ Toast Message -->
+  <div class="toast" id="toastMessage">Payment successful! Redirecting...</div>
+
+  <script>
+    function fakePay() {
+      const toast = document.getElementById("toastMessage");
+      toast.classList.add("show");
+
+      setTimeout(() => {
+        toast.classList.remove("show");
+        // ✅ Redirect to homepage after 3 seconds
+        window.location.href = "index.html";
+      }, 3000);
+    }
+  </script>
+
+</body>
+</html>

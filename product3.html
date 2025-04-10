@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Midnight Bloom - Le Sourire</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: black;
+      color: white;
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    .logo { text-align: center; font-size: 40px; padding: 30px 0 10px; font-weight: bold; letter-spacing: 2px; }
+    .nav { text-align: center; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.2); }
+    .nav a { color: rgba(255,255,255,0.7); text-decoration: none; margin: 0 20px; font-size: 16px; transition: 0.3s ease; }
+    .nav a:hover { color: white; }
+    .product-page { max-width: 900px; margin: 60px auto; display: flex; flex-wrap: wrap; gap: 30px; padding: 0 20px; }
+    .product-page img { width: 100%; max-width: 400px; border-radius: 12px; }
+    .details { flex: 1; }
+    .details h1 { margin-top: 0; }
+    .details p { font-size: 15px; color: #ccc; }
+    .price { font-size: 22px; margin: 20px 0; }
+    button { background-color: white; color: black; padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer; font-size: 16px; }
+    button:hover { background-color: #ddd; }
+    .toast { position: fixed; bottom: 20px; right: 20px; background-color: #111; color: white; padding: 12px 20px; border-radius: 8px; opacity: 0; transition: opacity 0.5s ease; z-index: 1000; }
+    .toast.show { opacity: 1; }
+  </style>
+</head>
+<body>
+  <div class="logo">Le Sourire</div>
+  <div class="nav">
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="cart.html">Cart</a>
+  </div>
+
+  <div class="product-page">
+    <img src="ChatGPT Image Apr 9, 2025, 05_26_06 AM.png"lueur de joie">
+    <div class="details">
+      <h1>lueur de joie</h1>
+      <p>Floral mystery and moonlit allure. A deep blend of jasmine, black orchid, and soft woods for your most elegant nights.</p>
+      <div class="price">$4000</div>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast">Added to cart</div>
+
+  <script>
+    function addToCart() {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.push({ name: "lueur de joie", price: 4000,image: "ChatGPT Image Apr 8, 2025, 02_18_52 PM.png" });
+      localStorage.setItem("cart", JSON.stringify(cart));
+      showToast("lueur de joie add to the cart")
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById("toast");
+      toast.textContent = message;
+      toast.classList.add("show");
+      setTimeout(() => {
+        toast.classList.remove("show");
+      }, 3000);
+    }
+  </script>
+</body>
+</html>

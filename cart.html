@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Le Sourire - Cart</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: black;
+      color: white;
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    .logo {
+      text-align: center;
+      font-size: 40px;
+      padding: 30px 0 10px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .nav {
+      text-align: center;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .nav a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      margin: 0 20px;
+      font-size: 16px;
+      transition: all 0.3s ease;
+    }
+
+    .nav a:hover {
+      color: white;
+      transform: scale(1.1);
+    }
+
+    .cart-container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .cart-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 20px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+    }
+
+    .cart-item img {
+      width: 80px;
+      border-radius: 8px;
+    }
+
+    .item-info {
+      flex: 1;
+      margin-left: 20px;
+    }
+
+    .item-info h3 {
+      margin: 0 0 5px;
+    }
+
+    .item-info p {
+      font-size: 14px;
+      margin: 0;
+    }
+
+    .remove-btn {
+      background-color: transparent;
+      color: #ff5e5e;
+      border: 1px solid #ff5e5e;
+      padding: 5px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .remove-btn:hover {
+      background-color: #ff5e5e;
+      color: black;
+    }
+
+    .total {
+      text-align: right;
+      font-size: 20px;
+      margin-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      padding-top: 20px;
+    }
+
+    .checkout-link {
+      display: block;
+      text-align: right;
+      margin-top: 10px;
+      color: white;
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <div class="logo">Le Sourire</div>
+
+  <div class="nav">
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="cart.html">Cart (<span id="miniCartCount">0</span>)</a>
+    <a href="login.html">Login</a>
+  </div>
+
+  <div class="cart-container" id="cartItemsContainer"></div>
+  <div class="cart-container">
+    <div class="total" id="totalPrice">Total: $0</div>
+    <a class="checkout-link" href="checkout.html">Proceed to Checkout</a>
+  </div>
+
+  <footer>
+    &copy; 2025 Le Sourire. All rights reserved. <br />
+    Contact us: contact@lesourire.com
+  </footer>
+
+  <script src="cart.js"></script>
+</body>
+</html>

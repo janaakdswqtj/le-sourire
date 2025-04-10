@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Le Sourire - Products</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: black;
+      color: white;
+      overflow-x: hidden;
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    .logo {
+      text-align: center;
+      font-size: 40px;
+      padding: 30px 0 10px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .nav {
+      text-align: center;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .nav a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      margin: 0 20px;
+      font-size: 16px;
+      transition: all 0.3s ease;
+    }
+
+    .nav a:hover {
+      color: white;
+      transform: scale(1.1);
+    }
+
+    .products {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 60px 20px;
+      flex-wrap: wrap;
+    }
+
+    .product {
+      background-color: black;
+      color: white;
+      border: 1px solid white;
+      padding: 20px;
+      border-radius: 16px;
+      width: 200px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .product:hover {
+      background-color: white;
+      color: black;
+      transform: scale(1.05);
+    }
+
+    .product img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 12px;
+    }
+
+    .product h3 {
+      margin: 10px 0 5px;
+    }
+
+    .product p {
+      font-size: 14px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      margin-top: 40px;
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.body.style.opacity = 1;
+    });
+  </script>
+</head>
+<body>
+  <div class="logo">Le Sourire</div>
+
+  <div class="nav">
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="login.html">Login</a>
+  </div>
+
+  <h2 style="text-align:center;">Our Signature Scents</h2>
+  <div class="products">
+    <a href="product1.html" class="product">
+      <img src="product1.jpg" alt="Rose Dusk">
+      <h3>Rose Dusk</h3>
+      <p>Floral, romantic elegance</p>
+    </a>
+    <a href="product2.html" class="product">
+      <img src="product2.jpg" alt="Amber Veil">
+      <h3>Amber Veil</h3>
+      <p>Warm, golden sensuality</p>
+    </a>
+    <a href="product3.html" class="product">
+      <img src="product3.jpg" alt="Citrus Bloom">
+      <h3>Citrus Bloom</h3>
+      <p>Fresh, bright energy</p>
+    </a>
+    <a href="product4.html" class="product">
+      <img src="product4.jpg" alt="Velvet Night">
+      <h3>Velvet Night</h3>
+      <p>Deep, mysterious charm</p>
+    </a>
+    <a href="product5.html" class="product">
+      <img src="product5.jpg" alt="Lush Meadow">
+      <h3>Lush Meadow</h3>
+      <p>Green, earthy freshness</p>
+    </a>
+    <a href="product6.html" class="product">
+      <img src="product6.jpg" alt="Ocean Whisper">
+      <h3>Ocean Whisper</h3>
+      <p>Cool, aquatic breeze</p>
+    </a>
+  </div>
+
+  <footer>
+    &copy; 2025 Le Sourire. All rights reserved. <br />
+    Contact us: contact@lesourire.com
+  </footer>
+</body>
+</html>

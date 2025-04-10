@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Le Sourire - Home</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: black;
+      color: white;
+      overflow-x: hidden;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .logo {
+      text-align: center;
+      font-size: 40px;
+      padding: 30px 0 10px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .nav {
+      text-align: center;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .nav a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      margin: 0 20px;
+      font-size: 16px;
+      transition: all 0.3s ease;
+    }
+
+    .nav a:hover {
+      color: white;
+      transform: scale(1.1);
+    }
+
+    .hero {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 80px 40px;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+
+    .hero img {
+      width: 350px;
+      border-radius: 20px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .hero-text {
+      max-width: 400px;
+      font-size: 20px;
+      line-height: 1.6;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .hero.visible img,
+    .hero.visible .hero-text {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .buttons {
+      margin-top: 30px;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .shop-button {
+      padding: 12px 24px;
+      border-radius: 50px;
+      background-color: rgba(255, 255, 255, 0.05);
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 14px;
+    }
+
+    .shop-button:hover {
+      background-color: white;
+      color: black;
+      transform: scale(1.05);
+    }
+
+    .products {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 60px 20px;
+      flex-wrap: wrap;
+    }
+
+    .product {
+      background-color: black;
+      color: white;
+      border: 1px solid white;
+      padding: 20px;
+      border-radius: 16px;
+      width: 200px;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+      cursor: pointer;
+    }
+
+    .product.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .product:hover {
+      background-color: white;
+      color: black;
+      transform: scale(1.05);
+    }
+
+    .product img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 12px;
+    }
+
+    .product h3 {
+      margin: 10px 0 5px;
+    }
+
+    .product p {
+      font-size: 14px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      margin-top: 40px;
+    }
+  </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Fade in body
+      document.body.style.opacity = 1;
+
+      // Intersection fade for hero/products
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.product').forEach(el => observer.observe(el));
+      const hero = document.querySelector('.hero');
+      if (hero) observer.observe(hero);
+
+      // Page fade-out on link click
+      const links = document.querySelectorAll('a[href]');
+      links.forEach(link => {
+        link.addEventListener('click', function(e) {
+          const href = this.getAttribute('href');
+          if (!href.startsWith('#')) {
+            e.preventDefault();
+            document.body.style.opacity = 0;
+            setTimeout(() => {
+              window.location.href = href;
+            }, 500);
+          }
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+
+  <!-- Logo -->
+  <div class="logo">Le Sourire</div>
+
+  <!-- Navigation -->
+  <div class="nav">
+    <a href="#top">Home</a>
+    <a href="products.html">Products</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="login.html">Login</a>
+    <a href="cart.html">cart</a>
+  </div>
+
+
+  <!-- Hero Section -->
+  <div class="hero" id="top">
+    <img src="ChatGPT Image Apr 8, 2025, 02_18_52 PM.png"Le Sourire Perfume"/>
+    <div class="hero-text">
+      <h2>Whispers of scent, echoes of joy</h2>
+      <p>Discover the essence of elegance with our signature collection. Le Sourire brings luxury and emotion in every bottle, where fragrance meets feeling.</p>
+      <div class="buttons">
+        <button class="shop-button" onclick="window.location.href='products.html'">Shop Now</button>
+        <button class="shop-button" onclick="document.getElementById('products').scrollIntoView({ behavior: 'smooth' })">Explore</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product Section -->
+  <h2 style="text-align:center;" id="products">Our Signature Scents</h2>
+  <div class="products">
+    <div class="product" onclick="window.location.href='products.html'">
+      <img src="ff762018-f194-433e-94b2-6af69c481588.png"Rêve de Soie"
+      <h3>Rêve de Soie</h3>
+      <p>As soft as silk. As deep as dreams.
+    </div>
+    <div class="product" onclick="window.location.href='products.html'">
+      <img src="ChatGPT Image Apr 9, 2025, 05_26_06 AM.png"">
+      <h3>Lueur de Joie</h3>
+      <p>Where happiness finds its light.</p>
+    </div>
+    <div class="product" onclick="window.location.href='products.html'">
+      <img src="e145dadd-7c24-48e9-b480-0a5204a190c2.png"
+      <h3>Chuchotement</h3>
+      <p> A secret spoken in scent</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Le Sourire. All rights reserved. <br />
+    Contact us: contact@lesourire.com
+  </footer>
+  <script src="main.js"></script>
+
+</body>
+</html>

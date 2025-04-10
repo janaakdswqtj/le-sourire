@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About - Le Sourire</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: black;
+      color: white;
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    .logo {
+      text-align: center;
+      font-size: 40px;
+      padding: 30px 0 10px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .nav {
+      text-align: center;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .nav a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      margin: 0 20px;
+      font-size: 16px;
+      transition: all 0.3s ease;
+    }
+
+    .nav a:hover {
+      color: white;
+      transform: scale(1.1);
+    }
+
+    .about-section {
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 0 20px;
+      font-size: 18px;
+      line-height: 1.8;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .about-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      margin-top: 60px;
+    }
+  </style>
+</head><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About - Le Sourire</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #000;
+      color: #fff;
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    .logo {
+      text-align: center;
+      font-size: 40px;
+      font-weight: bold;
+      padding: 30px 0 10px;
+      letter-spacing: 2px;
+    }
+
+    .nav {
+      text-align: center;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .nav a {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      margin: 0 20px;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+
+    .nav a:hover {
+      color: white;
+    }
+
+    .about-container {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 20px;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .about-image {
+      flex: 1 1 300px;
+    }
+
+    .about-image img {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    .about-text {
+      flex: 2 1 400px;
+    }
+
+    .about-text h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .about-text p {
+      font-size: 16px;
+      line-height: 1.7;
+      color: #ccc;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="logo">Le Sourire</div>
+
+  <div class="nav">
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="login.html">Login</a>
+  </div>
+
+  <div class="about-container">
+    <div class="about-image">
+      <img src="Screenshot 2025-04-09 020909.png" alt="Le Sourire Brand">
+    </div>
+    <div class="about-text">
+      <h2>Whispers of scent, echoes of joy.</h2>
+      <p>
+        At Le Sourire, we believe fragrance is more than a scent—it's a memory, a moment, a feeling. Inspired by the elegance of French simplicity and the quiet luxury of joy, our perfumes are crafted with precision and passion. Each bottle is a whisper, each drop an echo of what makes life beautiful.
+      </p>
+      <p>
+        Founded in 2025, Le Sourire continues to redefine fragrance for the modern soul—where timeless sophistication meets joyful expression.
+      </p>
+    </div>
+  </div>
+
+
+</body>
+</html>
+
+<body>
+
+  <div class="about-section">
+    <h2>Our Story</h2>
+    <p>
+      Le Sourire is more than a fragrance—it's a feeling, a moment, a whisper of elegance. Inspired by timeless French beauty and modern sophistication, our perfumes are crafted with emotion and grace. Each bottle captures the soul of a memory, a place, a dream.
+    </p>
+    <p>
+      From the first note to the last trace, Le Sourire perfumes invite you to express yourself with confidence and joy. Welcome to a world where scent becomes a smile.
+    </p>
+    <p>
+      made by : jana
+                wedad
+                mayar
+    </p>
+  </div>
+  <footer>
+    &copy; 2025 Le Sourire. All rights reserved. <br />
+    Contact us: contact@lesourire.com
+  </footer>
+
+
+  <script>
+    // Fade in scroll animation
+    document.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.about-section').forEach(el => observer.observe(el));
+    });
+  </script>
+
+</body>
+</html>
