@@ -160,10 +160,10 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // Fade in body
+      
       document.body.style.opacity = 1;
 
-      // Intersection fade for hero/products
+      
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
@@ -176,7 +176,7 @@
       const hero = document.querySelector('.hero');
       if (hero) observer.observe(hero);
 
-      // Page fade-out on link click
+      
       const links = document.querySelectorAll('a[href]');
       links.forEach(link => {
         link.addEventListener('click', function(e) {
@@ -195,10 +195,10 @@
 </head>
 <body>
 
-  <!-- Logo -->
+  
   <div class="logo">Le Sourire</div>
 
-  <!-- Navigation -->
+  
   <div class="nav">
     <a href="#top">Home</a>
     <a href="products.html">Products</a>
@@ -222,7 +222,7 @@
     </div>
   </div>
 
-  <!-- Product Section -->
+  
   <h2 style="text-align:center;" id="products">Our Signature Scents</h2>
   <div class="products">
     <div class="product" onclick="window.location.href='products.html'">
@@ -242,7 +242,7 @@
     </div>
   </div>
 
-  <!-- Footer -->
+  
   <footer>
     &copy; 2025 Le Sourire. All rights reserved. <br />
     Contact us: contact@lesourire.com
@@ -251,3 +251,4 @@
 
 </body>
 </html>
+
